@@ -95,27 +95,6 @@ export function generateIncident(city: City, segments: Segment[]): Incident {
   };
 }
 
-// Generate location name based on city
-function getLocationName(city: City): string {
-  const locations: { [key: string]: string[] } = {
-    ankara: [
-      'Kızılay Kavşağı', 'Tunalı Hilmi Caddesi', 'Atatürk Bulvarı',
-      'Eskişehir Yolu', 'Konya Yolu', 'Çankaya Caddesi', 'Dikimevi Kavşağı'
-    ],
-    istanbul: [
-      'Boğaziçi Köprüsü', 'TEM Otoyolu', 'E-5 Karayolu', 'Mecidiyeköy Kavşağı',
-      'Fatih Sultan Mehmet Köprüsü', 'Bağdat Caddesi', 'Barbaros Bulvarı'
-    ],
-    izmir: [
-      'Kordon', 'Halkapınar Kavşağı', 'Bornova Caddesi', 'Çeşme Otoyolu',
-      'Karşıyaka İskelesi', 'Gaziemir Bölgesi', 'Alsancak Caddesi'
-    ]
-  };
-  
-  const cityLocations = locations[city.key] || locations.ankara;
-  return cityLocations[Math.floor(Math.random() * cityLocations.length)];
-}
-
 // Generate AI response suggestions
 export function generateResponseSuggestions(incident: Incident): string[] {
   const suggestions: string[] = [];

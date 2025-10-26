@@ -25,9 +25,9 @@ function App() {
     setSegments
   } = useTrafficStore();
 
-  const updateIntervalRef = useRef<NodeJS.Timeout | null>(null);
-  const incidentIntervalRef = useRef<NodeJS.Timeout | null>(null);
-  const historicalIntervalRef = useRef<NodeJS.Timeout | null>(null);
+  const updateIntervalRef = useRef<number | null>(null);
+  const incidentIntervalRef = useRef<number | null>(null);
+  const historicalIntervalRef = useRef<number | null>(null);
 
   // Initialize segments on mount
   useEffect(() => {

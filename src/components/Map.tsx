@@ -1,6 +1,5 @@
 import { useEffect, useRef } from 'react';
 import { MapContainer, TileLayer, Polyline, Marker, Popup, Tooltip, useMap } from 'react-leaflet';
-import { motion } from 'framer-motion';
 import L from 'leaflet';
 import { useTrafficStore } from '../store/trafficStore';
 import { getIntensityColor, getIncidentIcon, getIncidentColor } from '../utils/simulation';
