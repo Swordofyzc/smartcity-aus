@@ -18,7 +18,7 @@ function calculateDistance(lat1: number, lng1: number, lat2: number, lng2: numbe
 }
 
 // Generate road segments based on real city road networks
-export function generateSegments(city: City, count?: number): Segment[] {
+export function generateSegments(city: City): Segment[] {
   const roads = getRoadsByCity(city.key);
   const segments: Segment[] = [];
   
@@ -42,7 +42,7 @@ export function generateSegments(city: City, count?: number): Segment[] {
 }
 
 // Generate random incident
-export function generateIncident(city: City, segments: Segment[]): Incident {
+export function generateIncident(segments: Segment[]): Incident {
   const types: IncidentType[] = ['ACCIDENT', 'ROADWORK', 'BREAKDOWN'];
   const type = types[Math.floor(Math.random() * types.length)];
   

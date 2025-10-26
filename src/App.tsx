@@ -63,7 +63,7 @@ function App() {
       
       // İlk olayı hemen oluştur (5 saniye sonra)
       const firstIncidentTimeout = setTimeout(() => {
-        const newIncident = generateIncident(currentCity, segments);
+        const newIncident = generateIncident(segments);
         console.log('🚨 Yeni olay oluşturuldu:', {
           id: newIncident.id,
           type: newIncident.type,
@@ -90,7 +90,7 @@ function App() {
           const currentSegments = useTrafficStore.getState().segments;
           if (currentSegments.length === 0) return;
           
-          const newIncident = generateIncident(currentCity, currentSegments);
+          const newIncident = generateIncident(currentSegments);
           console.log('🚨 Yeni olay oluşturuldu:', {
             id: newIncident.id,
             type: newIncident.type,
@@ -116,7 +116,7 @@ function App() {
         }
       };
     }
-  }, [isRunning, segments.length, currentCity, addIncident, removeIncident]);
+  }, [isRunning, segments.length, addIncident, removeIncident]);
 
   // Historical data collection (every 60 seconds)
   useEffect(() => {
